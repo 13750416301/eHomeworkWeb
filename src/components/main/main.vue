@@ -3,7 +3,7 @@
     <Sider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" class="left-sider" :style="{overflow: 'hidden'}">
       <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">
         <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
-        <div class="logo-con" style="display:flex;align-items:center;justify-content:center;width:100%;">
+        <div class="logo-con" style="display:flex;align-items:center;justify-content:center;width:100%;background-color:#2d8cf0;">
           <!-- <img v-show="!collapsed" :src="maxLogo" key="max-logo" />
           <img v-show="collapsed" :src="minLogo" key="min-logo" /> -->
           <Icon type="ios-book-outline" style="color:#fff;margin-right:5px;" size="30" /><div style="color:#fff;font-size:20px;">学生在线答题系统后台</div>

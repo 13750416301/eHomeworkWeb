@@ -6,8 +6,9 @@
       </Badge>
       <Icon :size="18" type="md-arrow-dropdown"></Icon>
       <DropdownMenu slot="list">
-        <DropdownItem name="message">
-          消息中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
+        <DropdownItem name="passwordChange">
+          <!-- 消息中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge> -->
+          修改密码
         </DropdownItem>
         <DropdownItem name="logout">退出登录</DropdownItem>
       </DropdownMenu>
@@ -46,11 +47,16 @@ export default {
         name: 'message_page'
       })
     },
+    password () {
+      this.$router.push({
+        name: '密码修改'
+      })
+    },
     handleClick (name) {
       switch (name) {
         case 'logout': this.logout()
           break
-        case 'message': this.message()
+        case 'passwordChange': this.password()
           break
       }
     }

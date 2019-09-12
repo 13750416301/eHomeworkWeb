@@ -1,5 +1,5 @@
 import Main from '@/components/main'
-import parentView from '@/components/parent-view'
+// import parentView from '@/components/parent-view'
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -51,30 +51,129 @@ export default [
     ]
   },
   {
-    path: '',
-    name: 'doc',
+    path: '/userManage',
+    name: '用户管理',
     meta: {
-      title: '文档',
-      href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
-    }
+      icon: 'ios-people',
+      title: '用户管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'userManage',
+        name: '用户管理',
+        meta: {
+          icon: 'ios-people',
+          title: '用户管理'
+        },
+        component: () => import('@/view/userManage/userManage.vue')
+      }
+    ]
   },
   {
-    path: '/join',
-    name: 'join',
+    path: '/questionManage',
+    name: '题库管理',
+    meta: {
+      icon: 'logo-buffer',
+      title: '题库管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'questionManage',
+        name: '题库管理',
+        meta: {
+          icon: 'logo-buffer',
+          title: '题库管理'
+        },
+        component: () => import('@/view/questionManage/questionManage.vue')
+      }
+    ]
+  },
+  {
+    path: '/testPaperManage',
+    name: '试卷管理',
+    meta: {
+      icon: 'ios-document',
+      title: '试卷管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'testPaperImport',
+        name: '试卷录入',
+        meta: {
+          icon: 'ios-log-in',
+          title: '试卷录入'
+        },
+        component: () => import('@/view/testPaperManage/testPaperImport.vue')
+      },
+      {
+        path: 'testPaperChange',
+        name: '试卷修改',
+        meta: {
+          icon: 'md-open',
+          title: '试卷修改'
+        },
+        component: () => import('@/view/testPaperManage/testPaperChange.vue')
+      },
+      {
+        path: 'testPaperDelete',
+        name: '试卷删除',
+        meta: {
+          icon: 'md-close',
+          title: '试卷删除'
+        },
+        component: () => import('@/view/testPaperManage/testPaperDelete.vue')
+      },
+      {
+        path: 'testPaperSearch',
+        name: '试卷查询',
+        meta: {
+          icon: 'ios-search',
+          title: '试卷查询'
+        },
+        component: () => import('@/view/testPaperManage/testPaperSearch.vue')
+      }
+    ]
+  },
+  {
+    path: '/resultSearch',
+    name: '考试结果查询',
+    meta: {
+      icon: 'md-eye',
+      title: '考试结果查询'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'resultSearch',
+        name: '考试结果查询',
+        meta: {
+          icon: 'md-eye',
+          title: '考试结果查询'
+        },
+        component: () => import('@/view/resultSearch/resultSearch.vue')
+      }
+    ]
+  },
+  {
+    path: '/passwordChange',
+    name: '密码修改',
     component: Main,
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     children: [
       {
-        path: 'join_page',
-        name: 'join_page',
+        path: 'passwordChange',
+        name: '密码修改',
         meta: {
-          icon: '_qq',
-          title: 'QQ群'
+          icon: 'md-key',
+          title: '密码修改'
         },
-        component: () => import('@/view/join-page.vue')
+        component: () => import('@/view/single-page/passwordChange/passwordChange.vue')
       }
     ]
   },
@@ -296,25 +395,6 @@ export default [
     ]
   },
   {
-    path: '/i18n',
-    name: 'i18n',
-    meta: {
-      hideInBread: true
-    },
-    component: Main,
-    children: [
-      {
-        path: 'i18n_page',
-        name: 'i18n_page',
-        meta: {
-          icon: 'md-planet',
-          title: 'i18n - {{ i18n_page }}'
-        },
-        component: () => import('@/view/i18n/i18n-page.vue')
-      }
-    ]
-  },
-  {
     path: '/error_store',
     name: 'error_store',
     meta: {
@@ -369,66 +449,6 @@ export default [
           title: '指令'
         },
         component: () => import('@/view/directive/directive.vue')
-      }
-    ]
-  },
-  {
-    path: '/multilevel',
-    name: 'multilevel',
-    meta: {
-      icon: 'md-menu',
-      title: '多级菜单'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'level_2_1',
-        name: 'level_2_1',
-        meta: {
-          icon: 'md-funnel',
-          title: '二级-1'
-        },
-        component: () => import('@/view/multilevel/level-2-1.vue')
-      },
-      {
-        path: 'level_2_2',
-        name: 'level_2_2',
-        meta: {
-          access: ['super_admin'],
-          icon: 'md-funnel',
-          showAlways: true,
-          title: '二级-2'
-        },
-        component: parentView,
-        children: [
-          {
-            path: 'level_2_2_1',
-            name: 'level_2_2_1',
-            meta: {
-              icon: 'md-funnel',
-              title: '三级'
-            },
-            component: () => import('@/view/multilevel/level-2-2/level-2-2-1.vue')
-          },
-          {
-            path: 'level_2_2_2',
-            name: 'level_2_2_2',
-            meta: {
-              icon: 'md-funnel',
-              title: '三级'
-            },
-            component: () => import('@/view/multilevel/level-2-2/level-2-2-2.vue')
-          }
-        ]
-      },
-      {
-        path: 'level_2_3',
-        name: 'level_2_3',
-        meta: {
-          icon: 'md-funnel',
-          title: '二级-3'
-        },
-        component: () => import('@/view/multilevel/level-2-3.vue')
       }
     ]
   },
