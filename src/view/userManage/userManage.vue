@@ -1,17 +1,22 @@
 <template>
   <div>
     <div class="head">
-      搜索用户：<Input placeholder="请输入用户名" style="width: auto" />
-      <Button style="margin-left:8px;" type="primary">查询</Button>
+      搜索用户：<Input v-model="userName" placeholder="请输入用户名" style="width: auto" clearable />
+      <Button @click="searchUser" style="margin-left:8px;" type="primary">查询</Button>
     </div>
     <Table size="default" border :columns="columns" :data="list"></Table>
+    <Modal @on-ok="deleteUser" v-model="isDelete" title="删除用户">
+      <p style="text-align:center;"><Icon type="ios-alert" color="red" size="15" style="margin-right:5px;" />确认删除该用户？删除后不可撤销！</p>
+    </Modal>
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'userManage',
   data () {
     return {
+      isDelete: false,
       columns: [
         {
           title: '编号',
@@ -65,14 +70,21 @@ export default {
               h('Button', {
                 props: {
                   type: 'default',
-                  size: 'large'
+                  size: 'default'
+                },
+                on: {
+                  click: () => {
+                    this.isDelete = true
+                    this.selectedId = params.row.userId
+                  }
                 }
               }, '删除用户')
             ])
           }
         }
       ],
-      list: [
+      list: [],
+      aList: [
         {
           userId: 1,
           userName: 'bobo',
@@ -163,14 +175,41 @@ export default {
           email: '1535151019@qq.com',
           remark: ''
         }
-      ]
+      ],
+      selectedId: null,
+      userName: null
     }
   },
   methods: {
-
+    loadData () {
+      axios.get('http://119.23.46.237:3000/getUserList', {
+        params: {
+          userName: this.userName
+        }
+      }).then(res => {
+        if (res.data.code === 0) {
+          this.list = res.data.data
+          console.log(this.list)
+        }
+      })
+    },
+    deleteUser () {
+      axios.post('http://119.23.46.237:3000/deleteUserById', {
+        id: this.selectedId
+      }).then(res => {
+        if (res.data.code === 0) {
+          this.loadData()
+          this.$Message.success('删除成功！')
+        }
+      })
+    },
+    searchUser () {
+      this.loadData()
+    }
   },
   created () {
-
+    this.userName = ''
+    this.loadData()
   },
   mounted () {
 
@@ -185,6 +224,8 @@ export default {
   font-size: 13px;
 }
 .head {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
   text-align: right;
   font-size: 13px;

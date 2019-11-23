@@ -4,6 +4,7 @@
 
 <template>
   <div class="login">
+    <h1 class="title">学生在线答题系统</h1>
     <div class="login-con">
       <Card icon="log-in" title="管理员登陆" :bordered="false">
         <div class="form-con">
