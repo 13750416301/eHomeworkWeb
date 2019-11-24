@@ -2,7 +2,7 @@ export default {
   /**
    * @description 配置显示在浏览器标签的title
    */
-  title: '学生在线答题系统',
+  title: 'STU学生作业系统',
   /**
    * @description token在Cookie中存储的天数，默认1天
    */

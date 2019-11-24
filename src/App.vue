@@ -23,5 +23,8 @@ html,body{
 }
 #app {
   .size;
+  // width: 1080px;
+  // height: 100%;
+  // margin: 0 auto;
 }
 </style>

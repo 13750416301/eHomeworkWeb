@@ -1,16 +1,6 @@
 <template>
   <Layout style="height: 100%" class="main">
-    <Sider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" class="left-sider" :style="{overflow: 'hidden'}">
-      <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">
-        <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
-        <div class="logo-con" style="display:flex;align-items:center;justify-content:center;width:100%;background-color:#2d8cf0;">
-          <!-- <img v-show="!collapsed" :src="maxLogo" key="max-logo" />
-          <img v-show="collapsed" :src="minLogo" key="min-logo" /> -->
-          <Icon type="ios-book-outline" style="color:#fff;margin-right:5px;" size="30" /><div style="color:#fff;font-size:20px;">学生在线答题系统后台</div>
-        </div>
-      </side-menu>
-    </Sider>
-    <Layout>
+    <Layout style="width: 100%">
       <Header class="header-con">
         <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
           <user :message-unread-count="unreadCount" :user-avatar="userAvatar"/>
@@ -19,6 +9,36 @@
           <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
         </header-bar>
       </Header>
+    </Layout>
+    <Sider hide-trigger collapsible :width="240" :collapsed-width="64" v-model="collapsed" class="left-sider" :style="{overflow: 'hidden'}">
+      <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">
+        <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
+        <!-- <div class="logo-con" style="display:flex;align-items:center;justify-content:center;width:100%;background-color:#2d8cf0;height:150px;"> -->
+        <div class="logo-con" style="text-algin:center;width:100%;background-color:#2d8cf0;height:150px;">
+          <!-- <img v-show="!collapsed" :src="maxLogo" key="max-logo" />
+          <img v-show="collapsed" :src="minLogo" key="min-logo" /> -->
+          <!-- <Icon type="ios-book-outline" style="color:#fff;margin-right:5px;" size="30" /><div style="color:#fff;font-size:20px;">学生在线答题系统后台</div> -->
+          <div class="avator" style="text-align:center;cursor:pointer;">
+            <Icon type="ios-contact" style="color:#fff;margin-right:5px;" size="75" />
+          </div>
+          <div class="user-name" style="color:#fff; text-align:center; font-size:15px;">
+            <p>蔡敏波</p>
+          </div>
+          <div class="account-btn" style="text-align:center;">
+            <Button type="primary" style="background-color:#faa046;border-radius:12px;">Account</Button>
+          </div>
+        </div>
+      </side-menu>
+    </Sider>
+    <Layout>
+      <!-- <Header class="header-con">
+        <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
+          <user :message-unread-count="unreadCount" :user-avatar="userAvatar"/>
+          <language v-if="$config.useI18n" @on-lang-change="setLocal" style="margin-right: 10px;" :lang="local"/>
+          <error-store v-if="$config.plugin['error-store'] && $config.plugin['error-store'].showInHeader" :has-read="hasReadErrorPage" :count="errorCount"></error-store>
+          <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
+        </header-bar>
+      </Header> -->
       <Content class="main-content-con">
         <Layout class="main-layout-con">
           <div class="tag-nav-wrapper">
