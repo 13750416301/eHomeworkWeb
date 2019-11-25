@@ -2,6 +2,10 @@
   <div class="header-bar">
     <!-- <sider-trigger :collapsed="collapsed" icon="md-menu" @on-change="handleCollpasedChange"></sider-trigger>
     <custom-bread-crumb show-icon style="margin-left: 30px;" :list="breadCrumbList"></custom-bread-crumb> -->
+    <div class="logo">
+      <Icon type="ios-book" size="28" />
+      STU学生作业系统
+    </div>
     <div class="custom-content-con">
       <slot></slot>
     </div>
