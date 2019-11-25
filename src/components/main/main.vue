@@ -13,9 +13,10 @@
     <Header class="header-con">
       <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
       <!-- <header-bar> -->
-        <user :message-unread-count="unreadCount" :user-avatar="userAvatar"/>
-        <language v-if="$config.useI18n" @on-lang-change="setLocal" style="margin-right: 10px;" :lang="local"/>
-        <error-store v-if="$config.plugin['error-store'] && $config.plugin['error-store'].showInHeader" :has-read="hasReadErrorPage" :count="errorCount"></error-store>
+        <!-- <user :message-unread-count="unreadCount" :user-avatar="userAvatar"/> -->
+        <user :user-avatar="userAvatar"/>
+        <!-- <language v-if="$config.useI18n" @on-lang-change="setLocal" style="margin-right: 10px;" :lang="local"/> -->
+        <!-- <error-store v-if="$config.plugin['error-store'] && $config.plugin['error-store'].showInHeader" :has-read="hasReadErrorPage" :count="errorCount"></error-store> -->
         <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
       </header-bar>
     </Header>
@@ -50,9 +51,9 @@
       </Sider>
       <Content class="main-content-con">
         <Layout class="main-layout-con">
-          <div class="tag-nav-wrapper">
+          <!-- <div class="tag-nav-wrapper">
             <tags-nav :value="$route" @input="handleClick" :list="tagNavList" @on-close="handleCloseTag"/>
-          </div>
+          </div> -->
           <Content class="content-wrapper">
             <keep-alive :include="cacheList">
               <router-view/>
