@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 style="text-align:center;margin-top:200px;color:#2d8cf0;font-size:50px;">学生在线答题系统</h1>
+    <h1 style="text-align:center;margin-top:200px;color:#2d8cf0;font-size:50px;">STU学生作业系统</h1>
     <!-- <Row :gutter="20">
       <i-col :xs="12" :md="8" :lg="4" v-for="(infor, i) in inforCardData" :key="`infor-${i}`" style="height: 120px;padding-bottom: 10px;">
         <infor-card shadow :color="infor.color" :icon="infor.icon" :icon-size="36">
@@ -81,7 +81,7 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  background-image: url('../../../assets/images/home-bg.jpg');
+  background-image: url('../../../assets/images/bg2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
