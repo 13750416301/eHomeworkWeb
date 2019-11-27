@@ -27,13 +27,37 @@ export default [
     },
     component: () => import('@/view/login/login.vue')
   },
+  // {
+  //   path: '/',
+  //   name: '_home',
+  //   redirect: '/home',
+  //   component: Main,
+  //   meta: {
+  //     hideInMenu: true,
+  //     notCache: true
+  //   },
+  //   children: [
+  //     {
+  //       path: '/home',
+  //       name: 'home',
+  //       meta: {
+  //         hideInMenu: true,
+  //         title: '首页',
+  //         notCache: true,
+  //         icon: 'md-home'
+  //       },
+  //       component: () => import('@/view/single-page/home')
+  //     }
+  //   ]
+  // },
   {
     path: '/',
     name: '_home',
     redirect: '/home',
     component: Main,
     meta: {
-      hideInMenu: true,
+      icon: 'ios-home',
+      title: '首页',
       notCache: true
     },
     children: [
@@ -41,142 +65,221 @@ export default [
         path: '/home',
         name: 'home',
         meta: {
-          hideInMenu: true,
           title: '首页',
-          notCache: true,
-          icon: 'md-home'
+          icon: 'ios-home',
+          notCache: true
         },
         component: () => import('@/view/single-page/home')
       }
     ]
   },
   {
-    path: '/userManage',
-    name: '用户管理',
+    path: '/personInfo',
+    name: '个人信息',
     meta: {
-      icon: 'ios-people',
-      title: '用户管理'
+      icon: 'ios-contact',
+      title: '个人信息'
     },
     component: Main,
     children: [
       {
-        path: 'userManage',
-        name: '用户管理',
+        path: 'personInfo',
+        name: '个人信息',
         meta: {
-          icon: 'ios-people',
-          title: '用户管理'
+          icon: 'ios-contact',
+          title: '个人信息'
         },
-        component: () => import('@/view/userManage/userManage.vue')
+        component: () => import('@/view/personInfo/personInfo.vue')
       }
     ]
   },
   {
-    path: '/questionManage',
-    name: '题库管理',
+    path: '/courseInfo',
+    name: '课程信息',
     meta: {
-      icon: 'logo-buffer',
-      title: '题库管理'
+      icon: 'ios-list-box',
+      title: '课程信息'
     },
     component: Main,
     children: [
       {
-        path: 'questionManage',
-        name: '题库管理',
+        path: 'courseInfo',
+        name: '课程信息',
         meta: {
-          icon: 'logo-buffer',
-          title: '题库管理'
+          icon: 'ios-list-box',
+          title: '课程信息'
         },
-        component: () => import('@/view/questionManage/questionManage.vue')
+        component: () => import('@/view/courseInfo/courseInfo.vue')
       }
     ]
   },
   {
-    path: '/testPaperManage',
-    name: '试卷管理',
+    path: '/note',
+    name: '笔记',
     meta: {
-      icon: 'ios-document',
-      title: '试卷管理'
+      icon: 'ios-create',
+      title: '笔记'
     },
     component: Main,
     children: [
       {
-        path: 'testPaperImport',
-        name: '试卷录入',
+        path: 'note',
+        name: '笔记',
         meta: {
-          icon: 'ios-log-in',
-          title: '试卷录入'
+          icon: 'ios-create',
+          title: '笔记'
         },
-        component: () => import('@/view/testPaperManage/testPaperImport.vue')
-      },
-      {
-        path: 'testPaperChange',
-        name: '试卷修改',
-        meta: {
-          icon: 'md-open',
-          title: '试卷修改'
-        },
-        component: () => import('@/view/testPaperManage/testPaperChange.vue')
-      },
-      {
-        path: 'testPaperDelete',
-        name: '试卷删除',
-        meta: {
-          icon: 'md-close',
-          title: '试卷删除'
-        },
-        component: () => import('@/view/testPaperManage/testPaperDelete.vue')
-      },
-      {
-        path: 'testPaperSearch',
-        name: '试卷查询',
-        meta: {
-          icon: 'ios-search',
-          title: '试卷查询'
-        },
-        component: () => import('@/view/testPaperManage/testPaperSearch.vue')
+        component: () => import('@/view/note/note.vue')
       }
     ]
   },
   {
-    path: '/resultSearch',
-    name: '考试结果查询',
+    path: '/favor',
+    name: '收藏',
     meta: {
-      icon: 'md-eye',
-      title: '考试结果查询'
+      icon: 'ios-star',
+      title: '收藏'
     },
     component: Main,
     children: [
       {
-        path: 'resultSearch',
-        name: '考试结果查询',
+        path: 'favor',
+        name: '收藏',
         meta: {
-          icon: 'md-eye',
-          title: '考试结果查询'
+          icon: 'ios-star',
+          title: '收藏'
         },
-        component: () => import('@/view/resultSearch/resultSearch.vue')
+        component: () => import('@/view/favor/favor.vue')
       }
     ]
   },
-  {
-    path: '/passwordChange',
-    name: '密码修改',
-    component: Main,
-    meta: {
-      hideInBread: true,
-      hideInMenu: true
-    },
-    children: [
-      {
-        path: 'passwordChange',
-        name: '密码修改',
-        meta: {
-          icon: 'md-key',
-          title: '密码修改'
-        },
-        component: () => import('@/view/single-page/passwordChange/passwordChange.vue')
-      }
-    ]
-  }
+  // {
+  //   path: '/userManage',
+  //   name: '用户管理',
+  //   meta: {
+  //     icon: 'ios-people',
+  //     title: '用户管理'
+  //   },
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'userManage',
+  //       name: '用户管理',
+  //       meta: {
+  //         icon: 'ios-people',
+  //         title: '用户管理'
+  //       },
+  //       component: () => import('@/view/userManage/userManage.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/questionManage',
+  //   name: '题库管理',
+  //   meta: {
+  //     icon: 'logo-buffer',
+  //     title: '题库管理'
+  //   },
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'questionManage',
+  //       name: '题库管理',
+  //       meta: {
+  //         icon: 'logo-buffer',
+  //         title: '题库管理'
+  //       },
+  //       component: () => import('@/view/questionManage/questionManage.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/testPaperManage',
+  //   name: '试卷管理',
+  //   meta: {
+  //     icon: 'ios-document',
+  //     title: '试卷管理'
+  //   },
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'testPaperImport',
+  //       name: '试卷录入',
+  //       meta: {
+  //         icon: 'ios-log-in',
+  //         title: '试卷录入'
+  //       },
+  //       component: () => import('@/view/testPaperManage/testPaperImport.vue')
+  //     },
+  //     {
+  //       path: 'testPaperChange',
+  //       name: '试卷修改',
+  //       meta: {
+  //         icon: 'md-open',
+  //         title: '试卷修改'
+  //       },
+  //       component: () => import('@/view/testPaperManage/testPaperChange.vue')
+  //     },
+  //     {
+  //       path: 'testPaperDelete',
+  //       name: '试卷删除',
+  //       meta: {
+  //         icon: 'md-close',
+  //         title: '试卷删除'
+  //       },
+  //       component: () => import('@/view/testPaperManage/testPaperDelete.vue')
+  //     },
+  //     {
+  //       path: 'testPaperSearch',
+  //       name: '试卷查询',
+  //       meta: {
+  //         icon: 'ios-search',
+  //         title: '试卷查询'
+  //       },
+  //       component: () => import('@/view/testPaperManage/testPaperSearch.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/resultSearch',
+  //   name: '考试结果查询',
+  //   meta: {
+  //     icon: 'md-eye',
+  //     title: '考试结果查询'
+  //   },
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'resultSearch',
+  //       name: '考试结果查询',
+  //       meta: {
+  //         icon: 'md-eye',
+  //         title: '考试结果查询'
+  //       },
+  //       component: () => import('@/view/resultSearch/resultSearch.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/passwordChange',
+  //   name: '密码修改',
+  //   component: Main,
+  //   meta: {
+  //     hideInBread: true,
+  //     hideInMenu: true
+  //   },
+  //   children: [
+  //     {
+  //       path: 'passwordChange',
+  //       name: '密码修改',
+  //       meta: {
+  //         icon: 'md-key',
+  //         title: '密码修改'
+  //       },
+  //       component: () => import('@/view/single-page/passwordChange/passwordChange.vue')
+  //     }
+  //   ]
+  // },
   // {
   //   path: '/message',
   //   name: 'message',
@@ -483,28 +586,28 @@ export default [
   //     }
   //   ]
   // },
-  // {
-  //   path: '/401',
-  //   name: 'error_401',
-  //   meta: {
-  //     hideInMenu: true
-  //   },
-  //   component: () => import('@/view/error-page/401.vue')
-  // },
-  // {
-  //   path: '/500',
-  //   name: 'error_500',
-  //   meta: {
-  //     hideInMenu: true
-  //   },
-  //   component: () => import('@/view/error-page/500.vue')
-  // },
-  // {
-  //   path: '*',
-  //   name: 'error_404',
-  //   meta: {
-  //     hideInMenu: true
-  //   },
-  //   component: () => import('@/view/error-page/404.vue')
-  // }
+  {
+    path: '/401',
+    name: 'error_401',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/401.vue')
+  },
+  {
+    path: '/500',
+    name: 'error_500',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/500.vue')
+  },
+  {
+    path: '*',
+    name: 'error_404',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/404.vue')
+  }
 ]
