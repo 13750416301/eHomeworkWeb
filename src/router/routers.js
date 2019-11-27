@@ -75,19 +75,19 @@ export default [
   },
   {
     path: '/personInfo',
-    name: '个人信息',
+    name: '账户信息',
     meta: {
       icon: 'ios-contact',
-      title: '个人信息'
+      title: '账户信息'
     },
     component: Main,
     children: [
       {
         path: 'personInfo',
-        name: '个人信息',
+        name: '账户信息',
         meta: {
           icon: 'ios-contact',
-          title: '个人信息'
+          title: '账户信息'
         },
         component: () => import('@/view/personInfo/personInfo.vue')
       }
@@ -110,6 +110,26 @@ export default [
           title: '课程信息'
         },
         component: () => import('@/view/courseInfo/courseInfo.vue')
+      }
+    ]
+  },
+  {
+    path: '/homework',
+    name: '个人作业',
+    meta: {
+      icon: 'ios-book',
+      title: '个人作业'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'homework',
+        name: '个人作业',
+        meta: {
+          icon: 'ios-book',
+          title: '个人作业'
+        },
+        component: () => import('@/view/homework/homework.vue')
       }
     ]
   },
