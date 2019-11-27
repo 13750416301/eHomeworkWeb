@@ -1,61 +1,29 @@
 <template>
   <div class="note">
     <!-- <h1 style="text-align:center;margin-top:200px;color:#2d8cf0;font-size:50px;">STU学生作业系统</h1> -->
-    <div class="switchType">
-        <Select v-model="model9" style="width:120px" value="关注">
-            <Option value="关注" label="关注"></Option>
-            <Option value="推荐" label="推荐"></Option>
-            <Option value="我的" label="我的"></Option>
-            <Option value="特别关注" label="特别关注"></Option>
-        </Select>
+    <div class="title">
+        <div class="switchType">
+            <Select v-model="model9" style="width:90px" placeholder="关注">
+                <Option value="关注" label="关注"></Option>
+                <Option value="推荐" label="推荐"></Option>
+                <Option value="我的" label="我的"></Option>
+                <Option value="特别关注" label="特别关注"></Option>
+            </Select>
+        </div>
+        <div class="addNoteBtn">
+            <Icon type="md-open" size="30" />
+        </div>
     </div>
-    <div class="course">
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/马克思主义.jpg" />
+    <div class="gotoNote">
+        <div class="gotoNoteTitle"><Icon type="md-bookmarks" style="color:#fff;margin-right:5px" size="20" />笔记本</div>
+        <div class="arrow"><Icon type="ios-arrow-forward" /></div>
+    </div>
+    <div class="content">
+        <div class="noContent">
+            <div class="noContentImg">
+                <img src="../../assets/images/note/noactivity.png" />
             </div>
-            <a>马克思主义</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/毛泽东思想.jpg" />
-            </div>
-            <a>毛泽东思想</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/大学物理.jpg" />
-            </div>
-            <a>大学物理</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/离散数学.jpg" />
-            </div>
-            <a>离散数学</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/计算机网络.jpg" />
-            </div>
-            <a>计算机网络</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/数据结构.jpg" />
-            </div>
-            <a>数据结构</a>
-        </div>
-        <div class="course-brid">
-            <div class="course-image">
-                <img src="../../assets/images/course/操作系统原理.jpg" />
-            </div>
-            <a>操作系统原理</a>
-        </div>
-        <div class="course-brid">
-            <div class="add-btn">
-                <Icon type="md-add-circle" style="color:#2d8cf0;line-height: 100%;" size="140" />
-            </div>
+            <p>暂无笔记</p>
         </div>
     </div>
   </div>
@@ -121,49 +89,41 @@ export default {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
 }
-.item-value {
-    margin-right: 20px;
-    font-size: 14px;
-}
-.course {
-    width: 100%;
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    .course-brid {
-        width: 240px;
-        height: 280px;
+.title {
+    position: relative;
+    margin-bottom: 20px;
+    .switchType {
         text-align: center;
-        float: left;
-        margin-right: 50px;
+    }
+    .addNoteBtn {
+        position: absolute;
+        right: 40px;
+        top: 0;
         cursor: pointer;
-        .course-image {
-            width: 100%;
-            height: 85%;
-            border: 2px solid #2d8cf0;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        a {
-            // margin-top: 10px;
-            line-height: 40px;
-            font-size: 14px;
-            color: #000;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #2d8cf0;
-        }
-        .add-btn {
-            width: 101%;
-            height: 85%;
-            border: 2px solid #2d8cf0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+        color: #2d8cf0;
+    }
+}
+.gotoNote {
+    font-size: 15px;
+    color: #fff;
+    border-top: 2px solid #000;
+    background-color: rgba(45, 140, 240, 0.8);
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px;
+    .gotoNoteTitle {
+        float: left;
+        display: flex;
+        align-items: center;
+    }
+    .arrow {
+        float: right;
+    }
+}
+.content {
+    margin-top: 100px;
+    .noContent {
+        text-align: center;
     }
 }
 </style>
