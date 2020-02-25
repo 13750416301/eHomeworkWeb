@@ -16,9 +16,9 @@
         <p><b>课程简介：</b>《马克思主义基本原理》是马克思主义理论一级学科下的第一个二级学科。马克思主义基本原理学科专业立足于对马克思主义进行整体性研究，并与马克思主义中国化研究、马克思主义发展史、国外马克思主义、社会思潮研究相结合，体现马克思主义基本原理及其在中国的运用与发展。旨在研究马克思主义经典著作和基本原理，从整体上研究和把握马克思主义科学体系。</p>
       </div>
     </div>
-    <h2 style="color:#2d8cf0;margin:10px 0;">最新课程作业</h2>
+    <h2 style="color:#2d8cf0;margin:10px 0;">最新课程作业</h2><br>
     <div class="course-homework">
-      <Table border :columns="homeworkColumns" :data="homeworkData"></Table>
+      <Table class="homework-table" border :columns="homeworkColumns" :data="homeworkData" :height="300"></Table>
     </div>
   </div>
 </template>
@@ -113,6 +113,20 @@ export default {
           beginTime: '2020年2月25日20点33分',
           endTime: '2020年2月25日20点33分',
           status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
         }
       ]
     }
@@ -145,7 +159,7 @@ export default {
     }
   }
   .course-intro-text {
-    width: 900px;
+    width: 65%;
     float: left;
     margin-left: 20px;
     p {
@@ -155,8 +169,9 @@ export default {
 }
 
 .course-homework {
+  display: block;
   width: 100%;
-  height: 350px;
+  // height: 800px;
   padding-top: 15px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
