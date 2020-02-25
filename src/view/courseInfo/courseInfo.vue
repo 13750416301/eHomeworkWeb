@@ -1,9 +1,9 @@
 <template>
   <div class="courseInfo">
     <!-- <h1 style="text-align:center;margin-top:200px;color:#2d8cf0;font-size:50px;">STU学生作业系统</h1> -->
-    <h1 style="color:#2d8cf0;margin:10px 0;">课程信息</h1>
+    <h1 style="color:#2d8cf0;margin:10px 0;">我的课程</h1>
     <div class="course">
-        <div class="course-brid">
+        <div class="course-brid" @click="toCourseDetail">
             <div class="course-image">
                 <img src="../../assets/images/course/马克思主义.jpg" />
             </div>
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+// import axios from 'axios'
 export default {
   name: 'courseInfo',
   data () {
@@ -83,6 +84,18 @@ export default {
         Sat: 1322,
         Sun: 1324
       }
+    }
+  },
+  methods: {
+    toCourseDetail () {
+      // axios.get('http://127.0.0.1:3000/getUser').then(res => {
+      //   if (res.data.code === 0 && res.data.data) {
+      //     // this.isLogin = true
+      //     // this.userData = res.data.data
+      //     console.log(res.data.data)
+      //   }
+      // })
+      this.$router.push({ path: '/courseInfo/courseDetail' })
     }
   },
   mounted () {

@@ -110,6 +110,15 @@ export default [
           title: '课程信息'
         },
         component: () => import('@/view/courseInfo/courseInfo.vue')
+      },
+      {
+        path: 'courseDetail',
+        name: '课程简介',
+        meta: {
+          hideInBread: true,
+          hideInMenu: true
+        },
+        component: () => import('@/view/courseInfo/courseDetail.vue')
       }
     ]
   },
@@ -130,6 +139,15 @@ export default [
           title: '个人作业'
         },
         component: () => import('@/view/homework/homework.vue')
+      },
+      {
+        path: 'homeworkDetail',
+        name: '作业详情',
+        meta: {
+          hideInBread: true,
+          hideInMenu: true
+        },
+        component: () => import('@/view/homework/homeworkDetail.vue')
       }
     ]
   },

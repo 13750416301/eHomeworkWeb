@@ -1,0 +1,85 @@
+<template>
+  <div class="homeworkDetail">
+    <h2 style="color:#2d8cf0;margin:10px 0;">课程简介</h2>
+    <div class="course-intro">
+      <div class="course-image">
+        <img src="../../assets/images/course/马克思主义.jpg" />
+      </div>
+      <div class="course-intro-text">
+        <h2>课程名称：马克思主义基本原理</h2>
+        <p><b>讲师：</b>杨沐</p>
+        <p><b>类型：</b>马克思主义学院\非通识课</p>
+        <p><b>授课形式：</b>理论讲授</p>
+        <p><b>开课周数：</b>3 ~ 18</p>
+        <p><b>开课时间：</b>周一ABC节；</p>
+        <p><b>教室：</b>讲堂一；</p>
+        <p><b>课程简介：</b>《马克思主义基本原理》是马克思主义理论一级学科下的第一个二级学科。马克思主义基本原理学科专业立足于对马克思主义进行整体性研究，并与马克思主义中国化研究、马克思主义发展史、国外马克思主义、社会思潮研究相结合，体现马克思主义基本原理及其在中国的运用与发展。旨在研究马克思主义经典著作和基本原理，从整体上研究和把握马克思主义科学体系。</p>
+      </div>
+    </div>
+    <h2 style="color:#2d8cf0;margin:10px 0;">最新课程作业</h2>
+    <div class="course-homework">
+      <Table border :columns="homeworkColumns" :data="homeworkData"></Table>
+    </div>
+  </div>
+</template>
+<script>
+// import moment from 'moment'
+// import axios from 'axios'
+export default {
+  name: 'homeworkDetail',
+  created () {
+  },
+  data () {
+    return {
+      homeworkData: [
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        },
+        {
+          title: '马克思作业五',
+          publisher: '杨沐',
+          beginTime: '2020年2月25日20点33分',
+          endTime: '2020年2月25日20点33分',
+          status: '进行中'
+        }
+      ]
+    }
+  },
+  methods: {
+    view () {
+      console.log('view')
+    }
+  },
+  mounted () {
+    //
+  }
+}
+</script>
+
+<style lang="less" scoped>
+</style>
