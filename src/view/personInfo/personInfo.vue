@@ -1,6 +1,5 @@
 <template>
   <div class="homework">
-    <!-- <h1 style="text-align:center;margin-top:200px;color:#2d8cf0;font-size:50px;">STU学生作业系统</h1> -->
     <h1 style="color:#2d8cf0;margin:10px 0;">账户信息</h1>
     <Tabs value="info">
         <TabPane class="infoTab" label="个人资料" name="info">
