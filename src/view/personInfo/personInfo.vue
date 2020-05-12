@@ -14,10 +14,13 @@
                     <span class="item-value">13750416301</span><Button type="default" @click="isPhone=true">修改</Button>
                 </FormItem>
                 <FormItem label="姓名：">
-                    <span class="item-value">蔡敏波</span><Button type="default" @click="isName=true">修改</Button>
+                    <span class="item-value">蔡敏波</span>
+                    <!-- <Button type="default" @click="isName=true">修改</Button> -->
                 </FormItem>
                 <FormItem label="性别：">
-                    <RadioGroup style="font-size:14px;">
+                  <Icon type="md-male"></Icon>
+                  <span class="item-value">男</span>
+                    <!-- <RadioGroup style="font-size:14px;">
                         <Radio label="男">
                             <Icon type="md-male"></Icon>
                             <span class="item-value">男</span>
@@ -26,7 +29,7 @@
                             <Icon type="md-female"></Icon>
                             <span class="item-value">女</span>
                         </Radio>
-                    </RadioGroup>
+                    </RadioGroup> -->
                 </FormItem>
                 <FormItem label="学号：">
                     <span class="item-value">2016101001</span>
@@ -50,9 +53,9 @@
                 </FormItem>
             </Form>
         </TabPane>
-        <TabPane label="登陆信息" name="loginLog">
+        <!-- <TabPane label="登陆信息" name="loginLog">
           <Table border :columns="loginColumns" :data="loginData"></Table>
-        </TabPane>
+        </TabPane> -->
     </Tabs>
     <Modal class="modal" v-model="isEmail">
       <div slot="header" class="modal-head">

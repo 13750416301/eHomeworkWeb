@@ -143,6 +143,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.courseDetail {
+  height: 700px;
+}
 .course-intro {
   width: 100%;
   height: 350px;

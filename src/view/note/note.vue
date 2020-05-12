@@ -18,14 +18,72 @@
         <div class="gotoNoteTitle"><Icon type="md-bookmarks" style="color:#fff;margin-right:5px" size="20" />笔记本</div>
         <div class="arrow"><Icon type="ios-arrow-forward" /></div>
     </div>
-    <div class="content">
+    <!-- <div class="content">
         <div class="noContent">
             <div class="noContentImg">
                 <img src="../../assets/images/note/noactivity.png" />
             </div>
             <p>暂无笔记</p>
         </div>
+    </div> -->
+    <div class="content">
+        <Card class="card" style="width:500px;">
+            <p slot="title">
+                <Icon type="ios-film-outline"></Icon>
+                个人笔记1
+            </p>
+            <a slot="extra">
+              <Button @click="isCard=true" type="info">查看</Button>
+            </a>
+            <p style="margin-bottom:8px;" class="note-info"><b>作业：</b>马克思主义作业5&nbsp;&nbsp;&nbsp;&nbsp;<b>科目：</b>马克思主义基本原理</p>
+            <p style="margin-bottom:8px;" class="note-info"><b>类型：</b>选择题</p>
+            <p style="margin-bottom:8px;"><b>题目：</b>“人的理性为自然立法”的观点属于（）…</p>
+            <p><b>备注：</b>主观唯心主义…</p>
+        </Card>
+        <Card class="card" style="width:500px;">
+            <p slot="title">
+                <Icon type="ios-film-outline"></Icon>
+                个人笔记2
+            </p>
+            <a slot="extra">
+              <Button @click="isCard=true" type="info">查看</Button>
+            </a>
+            <p style="margin-bottom:8px;" class="note-info"><b>作业：</b>计算机网络作业2&nbsp;&nbsp;&nbsp;&nbsp;<b>科目：</b>计算机网络</p>
+            <p style="margin-bottom:8px;" class="note-info"><b>类型：</b>选择题</p>
+            <p style="margin-bottom:8px;"><b>题目：</b>在OSI参考模型中，第n层与它之上的第n+1层的关系是…</p>
+            <p><b>备注：</b>第n层为第n+1层提供服务…</p>
+        </Card>
+        <Card class="card" style="width:500px;">
+            <p slot="title">
+                <Icon type="ios-film-outline"></Icon>
+                个人笔记3
+            </p>
+            <a slot="extra">
+              <Button @click="isCard=true" type="info">查看</Button>
+            </a>
+            <p style="margin-bottom:8px;" class="note-info"><b>作业：</b>数据库原理作业1&nbsp;&nbsp;&nbsp;&nbsp;<b>科目：</b>数据库原理</p>
+            <p style="margin-bottom:8px;" class="note-info"><b>类型：</b>选择题</p>
+            <p style="margin-bottom:8px;"><b>题目：</b>关系数据库规范化是为了解决关系数据库中（）的问题而引入的…</p>
+            <p><b>备注：</b>插入、删除异常和数据冗余…</p>
+        </Card>
     </div>
+    <Modal v-model="isCard" width="750">
+      <p slot="header">
+        <Icon type="ios-film-outline"></Icon>
+        个人笔记1
+      </p>
+      <p class="note-info" style="margin-bottom:12px;"><b>作业：</b>马克思主义作业1&nbsp;&nbsp;&nbsp;&nbsp;<b>科目：</b>马克思主义基本原理&nbsp;&nbsp;&nbsp;&nbsp;<b>类型：</b>选择题</p>
+      <p><b>题目：</b>根据IID模型，开发过程中如果发现不能按期完成任务时应该…</p>
+      <p class="option">A.增加开发人员</p>
+      <p class="option">B.开发人员加班加点争取完成任务</p>
+      <p class="option">C.取消或简化某些任务</p>
+      <p class="option">D.早期计划不周，发现问题时为期已晚，项目延期不可避免</p>
+      <p><b>正确答案：</b>A&nbsp;&nbsp;&nbsp;&nbsp;<b>我的答案：</b>A</p>
+      <p style="margin-top:10px;" class="note-text"><b>备注笔记：</b>应该取消或简化某些任务…</p>
+      <div slot="footer" style="text-align:center;">
+          <Button @click="isCard=false" type="info">确定</Button>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -34,7 +92,7 @@ export default {
   name: 'note',
   data () {
     return {
-      model9: ''
+      isCard: false
     }
   },
   mounted () {
@@ -97,9 +155,16 @@ export default {
     }
 }
 .content {
-    margin-top: 100px;
+    padding-top: 25px;
     .noContent {
+        margin-top: 100px;
         text-align: center;
     }
+    .card {
+      float: left;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
 }
+
 </style>
